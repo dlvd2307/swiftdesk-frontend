@@ -1,70 +1,134 @@
-# Getting Started with Create React App
+# 🎟️ SwiftDesk
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**SwiftDesk** is a lightweight, full-stack ticketing system designed for small teams, solo operators, or internal IT support workflows. It offers user-friendly ticket submission, admin control over ticket status and priority, and a fully deployed cloud architecture.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🌐 Live Demo
 
-### `npm start`
+- **Frontend**: [View on Vercel](https://swiftdesk-frontend.vercel.app)
+- **Backend**: [API on Render](https://swiftdesk-backend.onrender.com)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Features
 
-### `npm test`
+### 🧑‍💻 User Capabilities
+- Submit tickets with title and description
+- Auto-assigned priority (default: Low)
+- View real-time ticket status updates
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🛡️ Admin Capabilities
+- Login required for admin access
+- View all tickets grouped by status (Open, In Progress, Resolved, Closed)
+- Update ticket priority and status with dropdowns
+- Filter by priority, search by text, and track who submitted each ticket
+- Activity logs automatically track changes
 
-### `npm run build`
+### 🧠 System Highlights
+- PostgreSQL-backed persistence (no more data loss on deploy)
+- Responsive React frontend
+- Flask backend API with secure session management
+- Deployed via Vercel (frontend) and Render (backend)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🧰 Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Layer       | Tech                     |
+|-------------|--------------------------|
+| Frontend    | React, Axios, Toastify   |
+| Backend     | Flask, SQLAlchemy        |
+| Database    | PostgreSQL (via Render)  |
+| Deployment  | Vercel + Render          |
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🚀 Getting Started
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 1. Clone Repositories
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/YOUR_USERNAME/swiftdesk-frontend.git
+git clone https://github.com/YOUR_USERNAME/swiftdesk-backend.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+### 2. Backend Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd swiftdesk-backend
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Create a `.env` file with:
 
-### Code Splitting
+```
+DATABASE_URL=your_postgresql_connection_string
+SECRET_KEY=your_flask_secret_key
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Then run:
 
-### Analyzing the Bundle Size
+```bash
+flask run
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+### 3. Frontend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+cd swiftdesk-frontend
+npm install
+```
 
-### Advanced Configuration
+Create a `.env` file:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
+REACT_APP_API_BASE=http://localhost:5000
+```
 
-### Deployment
+Then:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+npm start
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔑 Admin Access
+
+Once your backend is live, hit this endpoint **once** to seed the default admin user:
+
+```
+https://your-backend-url/seed_admin
+```
+
+> **Username**: `admin`  
+> **Password**: `password123`
+
+---
+
+## 📌 Future Plans
+
+- Attachments (images, files)
+- Email notifications
+- Password reset & email verification
+- Analytics dashboard (ticket volume trends)
+- Better role-based access control
+
+---
+
+## 🤝 Contributions
+
+Forks and pull requests are welcome. SwiftDesk is open to enhancements or customization for your team or workflow.
+
+---
+
+## 🪪 License
+
+MIT © Dylan van Dijk
