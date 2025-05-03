@@ -50,7 +50,7 @@ function App() {
         </>
       ) : (
         <div style={{ padding: '24px' }}>
-          <h1>🎫 SwiftDesk</h1>
+          <h1> 🚀  SwiftDesk</h1>
           {showRegister ? (
             <>
               <Register onRegistered={() => setShowRegister(false)} />
